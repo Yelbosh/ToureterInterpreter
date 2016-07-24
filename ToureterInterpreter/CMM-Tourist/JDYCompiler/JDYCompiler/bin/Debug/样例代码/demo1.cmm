@@ -1,0 +1,21 @@
+﻿ /**Name:  		一维数组使用测试
+  *Author:		贾道远
+  *Date:		2013/1/5
+  */
+class ArrayTestDemo{
+	/*
+	  output: 	2
+				5
+				1
+	 */
+   int main(){
+	  int index = 1;
+		int arr[4];
+		arr[0] = 2;
+		arr[1] = 1;
+		arr[2] = 3;
+		write (arr[0]);
+		write(arr[1]+4);
+		write (arr[index]);
+	}
+}

@@ -1,0 +1,78 @@
+例一：
+	//插入排序，降序输出
+    real a[6];
+    a[0] = 9.1;
+    a[1] = 6.1;
+    a[2] = 5.2;
+    a[3] = 4.3;
+    a[4] = 2.5454;
+    a[5] = 7.222;
+
+    int i = 0;
+    int j = 0;
+    real temp = 0;
+
+    while(i<6){
+	j = i;
+	temp = a[i];
+	    
+        while(0<j){
+        	if(temp<a[j-1]){
+        		a[j] = a[j-1];
+        	    a[j-1] = temp;
+        	}
+        	j = j-1;
+        }
+
+	i = i+1;
+    }
+
+write(a[0]);write(a[1]);write(a[2]);write(a[3]);write(a[4]);write(a[5]);
+例一效果截图： 
+例二：//冒泡排序，降序输出
+    int a[6];
+    a[0] = 9;
+    a[1] = 5;
+    a[2] = 6;
+    a[3] = 4;
+    a[4] = 2;
+    a[5] = 7;
+
+	    int j = 5;
+	    int i = 0;
+	    int temp = 0;
+	while(0<j){
+	    i = 0;
+	    while(i<5){
+	        if  (a[i]<a[i+1])
+{
+	        temp = a[i];
+            a[i] = a[i+1];
+            a[i+1] = temp;
+            }
+	        i = i+1;
+	    }
+	      j = j-1;
+	}
+
+write(a[0]);write(a[1]);write(a[2]);write(a[3]);write(a[4]);write(a[5]);
+例二效果截图 
+例三：//查询输入值，输出数组脚标
+    int a[6];
+    a[0] = 9;
+    a[1] = 5;
+    a[2] = 6;
+    a[3] = 4;
+    a[4] = 2;
+    a[5] = 7;
+
+    int i = 0;
+    int j = 0;
+    read(j);
+    while(i<6){
+	if(a[i]==j){
+	write(i);
+	}
+
+	i = i+1;
+    }

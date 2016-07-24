@@ -1,0 +1,21 @@
+﻿/*Name: 函数调用测试
+ *Author: 贾道远
+ *Date: 2013/1/5
+ */
+ 
+class FunctionCallDemo{
+	/* purpose: 打印出参数的值
+	 * param:   需要打印的参数
+	 */
+	int callee(int param){
+		write(param);
+		return 0;
+	}
+	
+	//output: 123321
+	int main(){
+		int tmp=123321;
+		callee(tmp);
+		return 0;
+	}
+}

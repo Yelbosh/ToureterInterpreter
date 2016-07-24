@@ -1,0 +1,11 @@
+﻿ /**Name:  		参数读取测试
+  *Author:		贾道远
+  *Date:		2013/1/5
+  */
+class ParamReadDemo{
+	//output: 输入的数
+	int main(){
+		int buffer;
+		write(int);
+	}
+}

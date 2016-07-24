@@ -1,0 +1,18 @@
+﻿ /**Name:  		递归调用测试
+  *Author:		贾道远
+  *Date:		2013/1/5
+  */
+  class RecursiveDemo{
+	//递归函数recursive不断调用自己
+	int recursive(int param){
+		if(param==0)
+			write(0);
+		else
+			recursive(param-1);
+		return 1;
+	}
+	//output: 0;
+	int main(){
+		recursive(10);
+	}
+  }

@@ -1,0 +1,24 @@
+﻿/**
+ *Name:		变量作用域测试
+ *Author:	贾道远
+ *Date:		2013/1/5
+ */
+class VarDeclareDemo{
+	/*
+	  output: 4
+	 */
+	int main(){
+		int c = 23;
+		if(true)
+		{
+			int c=3;
+			if(c ==3){
+				int c=4;
+				write(c);
+			}
+			else{
+				write(0);
+			}
+		}
+	}
+}

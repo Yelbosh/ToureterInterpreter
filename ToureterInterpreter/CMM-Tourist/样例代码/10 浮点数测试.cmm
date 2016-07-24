@@ -1,0 +1,31 @@
+/**
+ * Name:	结构体测试
+ * Author:	贾道远
+ * Date:	2013/1/5
+ * Purpose:	1.测试基本类型声明的不同情况
+ *			2.测试数组的声明
+ *			3.测试结构体声明
+ */
+
+ struct StrtDemo{
+	int sec1;
+	real sec3;//浮点类型
+	int sec2[2];
+ } 
+class VarDeclareDemo{
+
+	
+	int main(){
+		struct StrtDemo demo;
+		demo.sec3 = 9.9;
+		real realTem = 8.7;
+		write(demo.sec3+realTem);
+		write(demo.sec3*realTem);
+		write(demo.sec3/realTem);
+		//隐式类型转换 int转real
+		int temInt = 9;
+		write(temInt+realTem);
+		write(temInt*realTem);
+		write(temInt/realTem);
+	 }
+}

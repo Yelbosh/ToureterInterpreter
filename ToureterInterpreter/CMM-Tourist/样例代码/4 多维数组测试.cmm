@@ -1,0 +1,25 @@
+﻿/**
+ * Name: 	多维数组测试
+ * Author:	贾道远
+ * Date:	2013/1/5
+ * Purpose:	1.多维数组的声明
+ *			2.多维数组的赋值
+ *			3.用户对多维数组输入值
+ */
+ class MultDimenArrayDemo{
+  //output: 
+  //	1
+  //	2
+	int main(){
+		int mul[2][3][4];//声明一个三维数组
+		int i=1;
+		int j=1;
+		int k=1; 
+		
+		mul[0][0][0]=1; //对数组进行赋值
+		mul[i][j+1][k+2]=i*j*k+1;
+		
+		write(mul[0][0][0]);
+		write(mul[1][2][3]);
+	}
+ }

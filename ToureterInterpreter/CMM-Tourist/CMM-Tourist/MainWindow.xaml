@@ -1,0 +1,347 @@
+﻿<Window x:Class="CMM_Tourist.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"       
+        xmlns:avalonDock="http://avalondock.codeplex.com"        
+        xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:shtextbox="clr-namespace:WZhou.SyntaxHighlightTextBox;assembly=SyntaxHighlightTextBox"
+        xmlns:winformsIntegration="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml"         
+        xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+         x:Name="mainWindow" Title="MainWindow" Height="768" Width="1024"  Loaded="Windows_Load">
+    <Grid x:Name="layoutRoot" Background="#FF2D2D30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StatusBar Grid.Column="0" Foreground="{x:Null}">
+                <StatusBar.Background>
+                    <ImageBrush ImageSource="icon/logo.png" Stretch="None"/>
+                </StatusBar.Background>
+            </StatusBar>
+            <StatusBar Grid.Column="2" Background="{x:Null}"/>-->
+        </Grid>
+        <Menu Grid.Row="1" Background="#FF2D2D30">
+            <MenuItem Header="File" x:Name="FileMenu" Foreground="White" BorderThickness="0">
+
+                <MenuItem Header="New" x:Name="NewMenu" Style="{DynamicResource MenuItemStyle1}" Click="NewFile">
+
+                </MenuItem>
+               
+                <MenuItem Header="Add File" Style="{DynamicResource MenuItemStyle1}" Click="Add_click">
+                </MenuItem>
+                <MenuItem Header="Close"  Style="{DynamicResource MenuItemStyle1}"/>
+                <MenuItem Header="Save"  Style="{DynamicResource MenuItemStyle1}"/>
+                <MenuItem Header="Save All"   Style="{DynamicResource MenuItemStyle1}"/>
+
+                <Separator Background="Black" Style="{DynamicResource Separator}"/>
+                <MenuItem Header="Recent File"  x:Name="History"  Style="{DynamicResource MenuItemStyle1}"/>
+                <Separator Style="{DynamicResource Separator}"/>
+                <MenuItem Header="Exit"   Style="{DynamicResource MenuItemStyle1}" Click="OnExit"/>
+
+
+            </MenuItem>
+            <MenuItem Header="Edit" Foreground="White"  Style="{DynamicResource MenuItemStyle1}" >
+                <MenuItem Header="Undo" Style="{DynamicResource MenuItemStyle1}" Click="OnUndoBtn"/>
+                <MenuItem Header="Redo" Style="{DynamicResource MenuItemStyle1}" Click="OnRedoBtn"/>
+                <Separator Background="Black" Style="{DynamicResource Separator}"/>
+                <MenuItem Header="cut" Style="{DynamicResource MenuItemStyle1}" Click="OnCutBtn"/>
+                <MenuItem Header="copy" Style="{DynamicResource MenuItemStyle1}" Click="OnCopyBtn"/>
+                <MenuItem Header="paste" Style="{DynamicResource MenuItemStyle1}" Click="OnPasteBtn"/>
+                <MenuItem Header="delete" Style="{DynamicResource MenuItemStyle1}" />
+                <Separator Background="Black" Style="{DynamicResource Separator}" />
+                <MenuItem Header="Select" Style="{DynamicResource MenuItemStyle1}" />
+                <MenuItem Header="select All" Style="{DynamicResource MenuItemStyle1}" />
+                <MenuItem Header="Find and Replace" Style="{DynamicResource MenuItemStyle1}"  />
+            </MenuItem>
+            <MenuItem Header="View" Style="{DynamicResource MenuItemStyle1}">
+                <MenuItem Header="Code" Style="{DynamicResource MenuItemStyle1}" Click="Code_click"/>
+                <MenuItem Header="File Resources" Style="{DynamicResource MenuItemStyle1}" Click="FilesResource_click"/>
+                <Separator Background="Black" Style="{DynamicResource Separator}"/>
+                <MenuItem Header="Error List" Style="{DynamicResource MenuItemStyle1}" Click="ErrorList"/>
+                <MenuItem Header="Lexical Analysis" Style="{DynamicResource MenuItemStyle1}" Click="lexicalAnalysis_click"/>
+                <MenuItem Header="Syntax Analysis" Style="{DynamicResource MenuItemStyle1}" Click="SyntaxAnalysis_click"/>
+                <MenuItem Header="Semantic Analysis" Style="{DynamicResource MenuItemStyle1}" Click="SemanticAnalysis_click"/>
+                <MenuItem Header="Intermediate Analysis" Style="{DynamicResource MenuItemStyle1}" Click="IntermediateCode_click"/>
+                <Separator Background="Black" Style="{DynamicResource Separator}"/>
+                <MenuItem Header="Maximum" x:Name="Max" Style="{DynamicResource MenuItemStyle1}" Click="Maximum"/>
+                <MenuItem Header="minimum" Style="{DynamicResource MenuItemStyle1}" Click="Minimum" />
+            </MenuItem>
+            <MenuItem Header="Run" Style="{DynamicResource MenuItemStyle1}">
+                <MenuItem Header="Run" Style="{DynamicResource MenuItemStyle1}" Click="OnRunBtn"/>
+                <MenuItem Header="Analysis" Style="{DynamicResource MenuItemStyle1}" Click="Analysis"/>
+            </MenuItem>
+            <MenuItem Header="Test" Style="{DynamicResource MenuItemStyle1}">
+                <MenuItem Header="Variable Delclaration and Assignment" Style="{DynamicResource MenuItemStyle1}" Click="Variable_test"/>
+                <MenuItem Header="Array Delclaration and Assignment" Style="{DynamicResource MenuItemStyle1}" Click="Array_test"/>
+                <MenuItem Header="If statement" Style="{DynamicResource MenuItemStyle1}" Click="If_statement"/>
+                <MenuItem Header="While statement" Style="{DynamicResource MenuItemStyle1}" Click="While_statement"/>
+                <MenuItem Header="Nested statement" Style="{DynamicResource MenuItemStyle1}" Click="Nested_statement"/>
+                <MenuItem Header="Symbol Table" Style="{DynamicResource MenuItemStyle1}" Click="Symbol_table"/>
+                <MenuItem Header="Function" Style="{DynamicResource MenuItemStyle1}" Click="Function_test"/>
+            </MenuItem>
+            <MenuItem Header="About" Style="{DynamicResource MenuItemStyle1}">
+                <MenuItem Header="Version Information" Style="{DynamicResource MenuItemStyle1}" Click="Version_information"/>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="2" Background="#FF2D2D30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1"  Orientation="Horizontal" FlowDirection="RightToLeft">
+                <ComboBox x:Name="highlightingComboBox" Background="#FF2D2D30" BorderBrush="#FF2D2D30"
+        			SelectedItem="{Binding SyntaxHighlighting, ElementName=textEditor}"
+        			ItemsSource="{Binding HighlightingDefinitions, Source={x:Static avalonedit:HighlightingManager.Instance}}"
+        			SelectionChanged="HighlightingComboBoxSelectionChanged" Style="{DynamicResource ComboBoxStyle1}" FlowDirection="LeftToRight" />
+            </StackPanel>
+            <StackPanel Grid.Column="0"  Orientation="Horizontal" >
+                <c1:C1ToolbarButton Style="{StaticResource C1btn}" Click="OnUndoBtn">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/last.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/last2.png" Stretch="Uniform" />
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/last3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <c1:C1ToolbarButton  Style="{StaticResource C1btn}" Click="OnRedoBtn">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/again.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/again2.png" Stretch="Uniform"/>
+
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/again3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <c1:C1ToolbarButton  Style="{StaticResource C1btn}" Click="NewFile">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/new.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/new2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/new3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <c1:C1ToolbarButton  Style="{StaticResource C1btn}" Click="Add_click">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/open.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/open2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/open3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <c1:C1ToolbarButton Style="{StaticResource C1btn}" Click="OnSaveBtn">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/save.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/save2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/save3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <!--<c1:C1ToolbarButton  Style="{StaticResource C1btn}">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/save_all.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/save_all2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/save_all3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>-->
+                <c1:C1ToolbarButton x:Name="BtnCut"  Style="{StaticResource C1btn}" Click="OnCutBtn">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/cut.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/cut2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/cut3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <c1:C1ToolbarButton x:Name="BtnCopy"  Style="{StaticResource C1btn}" Click="OnCopyBtn">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/copy.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/copy2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/copy3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <c1:C1ToolbarButton  Style="{StaticResource C1btn}" Click="OnPasteBtn">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/past.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/past2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/past3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <c1:C1ToolbarButton  Style="{StaticResource C1btn}" Click="OnRunBtn">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/run.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/run2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/run3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+                <c1:C1ToolbarButton  Style="{StaticResource C1btn}" Foreground="#FF2D2D30">
+                    <c1:C1ToolbarButton.Background>
+                        <ImageBrush ImageSource="icon/analyse.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.Background>
+                    <c1:C1ToolbarButton.MouseOverBrush>
+                        <ImageBrush ImageSource="icon2/analyse2.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.MouseOverBrush>
+                    <c1:C1ToolbarButton.PressedBrush>
+                        <ImageBrush ImageSource="icon3/analyse3.png" Stretch="Uniform"/>
+                    </c1:C1ToolbarButton.PressedBrush>
+                </c1:C1ToolbarButton>
+
+            </StackPanel>
+        </Grid>
+        <avalonDock:DockingManager Grid.Row="3" x:Name="docManager" AllowMixedOrientation="True" DocumentClosing="dockManager_DocumentClosing" Background="#FF2D2D30" Foreground="White" AnchorTemplate="{DynamicResource LayoutAnchorControlControlTemplate1}" AnchorablePaneTemplate="{DynamicResource {ComponentResourceKey ResourceId=SubmenuItemTemplateKey, TypeInTargetAssembly={x:Type MenuItem}}}">
+            <avalonDock:DockingManager.Theme>
+                <avalonDock:MetroTheme/>
+            </avalonDock:DockingManager.Theme>
+            <avalonDock:DockingManager.DocumentHeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Title}" TextTrimming="WordEllipsis"  Foreground="White" />
+                    </StackPanel>
+                </DataTemplate>
+            </avalonDock:DockingManager.DocumentHeaderTemplate>
+            <avalonDock:DockingManager.AnchorableTitleTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" TextTrimming="WordEllipsis" Foreground="White" />
+                </DataTemplate>
+            </avalonDock:DockingManager.AnchorableTitleTemplate>
+            <avalonDock:DockingManager.AnchorableHeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" TextTrimming="WordEllipsis" Foreground="White" />
+                </DataTemplate>
+            </avalonDock:DockingManager.AnchorableHeaderTemplate>
+
+            <avalonDock:LayoutRoot PropertyChanged="OnLayoutRootPropertyChanged" >
+                <avalonDock:LayoutPanel Orientation="Horizontal" >
+                    <avalonDock:LayoutAnchorablePane DockWidth="180">
+                        <avalonDock:LayoutAnchorable x:Name="FilesResource"  ContentId="FilesResource" Title="Files Resource" ToolTip="My WinForms Tool" CanHide="False" CanClose="False">
+                            <TreeView x:Name="treeview_FilesResource" Background="#FF252526" BorderBrush="{x:Null}" Foreground="White">
+                                <TreeViewItem x:Name="item"  Header="样例代码" Foreground="White" >
+                                    <TreeViewItem Header="demon1" Foreground="White"/>
+                                    <TreeViewItem Header="demon2" Foreground="White"/>
+                                    <TreeViewItem Header="demon3" Foreground="White"/>
+                                </TreeViewItem>
+
+                                <TreeViewItem Header="Test code" Foreground="White">
+                                    <TreeViewItem Header="Variable Delclaration and Assignment" Foreground="White" MouseDoubleClick="TreeViewItem_MouseDoubleClick" DataContext="1"/>
+                                    <TreeViewItem Header="Array Delclaration and Assignment" Foreground="White" MouseDoubleClick="TreeViewItem_MouseDoubleClick" DataContext="2"/>
+                                    <TreeViewItem Header="If statement" Foreground="White" MouseDoubleClick="TreeViewItem_MouseDoubleClick" DataContext="3"/>
+                                    <TreeViewItem Header="While statement" Foreground="White" MouseDoubleClick="TreeViewItem_MouseDoubleClick" DataContext="4"/>
+                                    <TreeViewItem Header="Nested statement" Foreground="White" MouseDoubleClick="TreeViewItem_MouseDoubleClick" DataContext="5"/>
+                                    <TreeViewItem Header="Symbol Table" Foreground="White" MouseDoubleClick="TreeViewItem_MouseDoubleClick" DataContext="6"/>
+                                    <TreeViewItem Header="Function" Foreground="White" MouseDoubleClick="TreeViewItem_MouseDoubleClick" DataContext="7"/>                               
+                                </TreeViewItem>
+                                <TreeViewItem Header="History" Foreground="White">
+                                    <TreeViewItem Header="demon3" Foreground="White"/>
+                                </TreeViewItem>
+                            </TreeView>
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorablePane>
+                    <avalonDock:LayoutDocumentPaneGroup Orientation="Vertical" x:Name="Code">
+                        <avalonDock:LayoutDocumentPane x:Name="Code_view" DockHeight="3.4*"  >           
+                            <avalonDock:LayoutDocument ContentId="document1" Title="Document 1">
+                                <avalonedit:TextEditor x:Name="textEditor" TextChanged="InputTbx_SelectionChanged"  FontFamily="Consolas" FontSize="10pt" ShowLineNumbers="True"  Style="{StaticResource ResourceKey=t_t_TextBoxStyle1}" SyntaxHighlighting="CMM" Template="{DynamicResource TextEditorControlTemplate1}" Focusable="True" />
+                            </avalonDock:LayoutDocument>
+                        </avalonDock:LayoutDocumentPane>
+                        <avalonDock:LayoutDocumentPane DockHeight="*">
+                            <avalonDock:LayoutAnchorable ContentId="error1" Title="Error" CanClose="False">
+                                <TextBox x:Name="error" Style="{StaticResource ResourceKey=t_TextBoxStyle1}"/>
+                            </avalonDock:LayoutAnchorable>
+                            <avalonDock:LayoutAnchorable ContentId="Console" Title="Console" CanClose="False">
+                                <RichTextBox x:Name="console" Style="{StaticResource ResourceKey=t_RichTextBoxStyle1}" KeyDown="Console_OnKeyDown">
+                                    <FlowDocument>
+                                        <Paragraph>
+                                            <Run Text=""/>
+                                        </Paragraph>
+                                    </FlowDocument>
+                                </RichTextBox>
+
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutDocumentPane>
+                    </avalonDock:LayoutDocumentPaneGroup>
+                    <avalonDock:LayoutAnchorablePaneGroup DockWidth="200">
+                        <avalonDock:LayoutAnchorablePane>
+                            <avalonDock:LayoutAnchorable ContentId="LexicalAnalysis" Title="Lexical Analysis" Hiding="OnToolWindow1Hiding" CanClose="False">
+                                <TextBox x:Name="LexicalAnalysis" Style="{StaticResource ResourceKey=t_TextBoxStyle1}" />
+                            </avalonDock:LayoutAnchorable>
+                            <avalonDock:LayoutAnchorable ContentId="SyntaxAnalysis" Title="Syntax Analysis" CanClose="False">
+                                <TextBox x:Name="SyntaxAnalysis" Style="{StaticResource ResourceKey=t_TextBoxStyle1}" />
+                            </avalonDock:LayoutAnchorable>
+                            <avalonDock:LayoutAnchorable ContentId="SemanticAnalysis" Title="Semantic Analysis" CanClose="False">
+                                <TextBox x:Name="SemanticAnalysis" Style="{StaticResource ResourceKey=t_TextBoxStyle1}"/>
+                            </avalonDock:LayoutAnchorable>
+                            <avalonDock:LayoutAnchorable ContentId="IntermediateCode" Title="Intermediate Code" CanClose="False" >
+                                <TextBox x:Name="IntermediateCode" Style="{StaticResource ResourceKey=t_TextBoxStyle1}" />
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+                    </avalonDock:LayoutAnchorablePaneGroup>
+                </avalonDock:LayoutPanel>
+            </avalonDock:LayoutRoot>
+        </avalonDock:DockingManager>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StatusBar Grid.Column="0">
+                <StatusBarItem Content="Ready" Width="50" Background="#FF007ACC" Foreground="White"/>
+            </StatusBar>
+            <StatusBar Grid.Column="1">
+                <StatusBarItem x:Name="try1" Background="#FF007ACC" Foreground="White"/>
+
+            </StatusBar>
+            <StatusBar Grid.Column="2">
+                <StatusBarItem  Content="Row       Col " x:Name="ready" Background="#FF007ACC" Foreground="White" />
+            </StatusBar>
+            <Border BorderBrush="#FF007ACC" BorderThickness="1" Grid.ColumnSpan="2" Margin="0" Padding="0"/>
+        </Grid>
+    </Grid>
+    
+    
+    
+    
+    
+    
+     
+</Window>

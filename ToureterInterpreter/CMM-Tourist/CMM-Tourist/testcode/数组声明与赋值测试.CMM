@@ -1,0 +1,6 @@
+  int arr[4];
+    arr[0] = 2;
+    arr[1] = 1;
+    arr[2] = 3;
+    //write(arr[-1]);  //测试下标合法性，打印失败
+    write (arr[0]);write(arr[1]+4);  //输出2,5

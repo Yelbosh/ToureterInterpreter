@@ -1,0 +1,5 @@
+E:\VS2010\C#\JDYCompiler\JDYCompiler\bin\Debug\JDYCompiler.exe
+E:\VS2010\C#\JDYCompiler\JDYCompiler\bin\Debug\JDYCompiler.pdb
+E:\VS2010\C#\JDYCompiler\JDYCompiler\obj\x86\Debug\JDYCompiler.exe
+E:\VS2010\C#\JDYCompiler\JDYCompiler\obj\x86\Debug\JDYCompiler.pdb
+E:\VS2010\C#\JDYCompiler\JDYCompiler\obj\x86\Debug\JDYCompiler.csprojResolveAssemblyReference.cache

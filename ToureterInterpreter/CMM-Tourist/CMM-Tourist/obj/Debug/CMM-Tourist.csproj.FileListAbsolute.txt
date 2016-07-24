@@ -1,0 +1,46 @@
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\CMM-Tourist.exe.config
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\CMM-Tourist.exe
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\CMM-Tourist.pdb
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\AvalonDock.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\AvalonDock.Themes.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\AvalonDock.Themes.Metro.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\SyntaxHighlightTextBox.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\MainWindow.baml
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\App.baml
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\MainWindow.g.cs
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\App.g.cs
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist_MarkupCompile.cache
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.g.resources
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\CMM_Tourist.Properties.Resources.resources
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.csproj.GenerateResource.Cache
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.exe
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.pdb
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\DotNetNotepad.Core.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\C1.WPF.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\C1.WPF.Toolbar.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\bin\Debug\WPFToolkit.dll
+C:\Users\Bingo\Documents\Visual Studio 2012\Projects\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.csprojResolveAssemblyReference.cache
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\CMM-Tourist.exe.config
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.exe
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.pdb
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\CMM-Tourist.exe
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\CMM-Tourist.pdb
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\AvalonDock.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\AvalonDock.Themes.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\AvalonDock.Themes.Metro.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\C1.WPF.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\C1.WPF.Toolbar.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\DotNetNotepad.Core.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\ICSharpCode.AvalonEdit.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\SyntaxHighlightTextBox.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\bin\Debug\WPFToolkit.dll
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.csprojResolveAssemblyReference.cache
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\MainWindow.baml
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\App.baml
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\MainWindow.g.cs
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\App.g.cs
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist_MarkupCompile.cache
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.g.resources
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\CMM_Tourist.Properties.Resources.resources
+E:\study\解释器构造\CMM-Tourist\CMM-Tourist\obj\Debug\CMM-Tourist.csproj.GenerateResource.Cache

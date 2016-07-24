@@ -1,0 +1,29 @@
+﻿/*Name: 	算术运算测试
+ *Author:	贾道远
+ *Date:		2013/1/6
+ *Purpose:	1.测试运算符优先级
+ *			2.表达式中夹杂数组,函数调用的情况		
+ */
+class ExpressionDemo{
+	int multiply(int a, int b){
+		return a*b;
+	}
+	
+	/*
+	output: 16
+	*/
+	int main(){
+		int a;
+		int c=3;		
+		int b[2];
+		a=2*4;
+		b[0]=1;
+		b[1]=2;
+		
+		write (b[1]+a*b[0]+multiply(b[1],c));
+		//求余操作
+		int d1 = 90;
+		int d2 = 13;
+		write(d1%d2);
+	}
+}

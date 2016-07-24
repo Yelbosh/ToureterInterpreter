@@ -1,0 +1,23 @@
+¶àÖØÇ¶Ì×
+    int a = 0;
+while(a<4)
+{
+   int b = a+2;
+   if(b<4)
+   {
+      write(b);
+      int c = b;
+      while(0<c)
+      {
+         int d = c-1;
+         write(d);
+         c = c-1;
+      }
+
+   }
+   else
+   {
+     write(a);
+   }
+   a = a+1;
+}             // rl:2 1 0  r2:3 2 1 0  r3:2  r4:3

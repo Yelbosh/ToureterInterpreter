@@ -1,0 +1,33 @@
+﻿/**
+ * Name:	结构体测试
+ * Author:	贾道远
+ * Date:	2013/1/5
+ * Purpose:	1.测试基本类型声明的不同情况
+ *			2.测试数组的声明
+ *			3.测试结构体声明
+ */
+
+ struct StrtDemo{
+	int sec1;
+	int sec2[2];
+ } 
+class VarDeclareDemo{
+
+	//output:  	1
+	//			20
+	//			30
+	int main(){
+		int a;
+		int b=1;
+		int c = 2;
+		a=1;
+		struct StrtDemo demo;
+		demo.sec1=1;
+		demo.sec2[0]=20;
+		int d[3];
+		d[2]=demo.sec2[0]+b+9;
+		write(b); //1
+		write(demo.sec2[0]);//20
+		write(d[2]);//30
+	 }
+}

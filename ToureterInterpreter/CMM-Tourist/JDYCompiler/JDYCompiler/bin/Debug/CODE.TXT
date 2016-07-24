@@ -1,0 +1,243 @@
+* *This is the interminal code:
+
+* Standard prelude:
+
+0:  LD  6,0(0) 	load maxaddress from location 0
+1:  ST  0,0(0) 	clear location 0
+* End of standard prelude.
+* ->Function Definition: function1
+* ->Arithmatic
+* -> Const INT
+3:  LDC  0,9(0) 	load const int
+* <- Const INT
+4:  ST  0,0(6) 	store left opto
+* ->Term
+* -> Const INT
+5:  LDC  0,8(0) 	load const int
+* <- Const INT
+6:  ST  0,-1(6) 	store left opto
+* ->Term
+* -> Const INT
+7:  LDC  0,7(0) 	load const int
+* <- Const INT
+8:  ST  0,-2(6) 	store left opto
+* -> Const INT
+9:  LDC  0,13(0) 	load const int
+* <- Const INT
+10:  LD  1,-2(6) 	op: load left opto
+11:  MOD  0,1,0 	op %
+* <-Term
+12:  LD  1,-1(6) 	op: load left opto
+13:  MUL  0,1,0 	op *
+* <-Term
+14:  LD  1,0(6) 	op: load left opto
+15:  ADD  0,1,0 	op +
+* <-Arithmatic
+16:  ST  0,5(5) 	declare assign
+* -> If
+* ->EqualExp
+* ->Arithmatic
+* -> Id
+17:  LD  0,2(5) 	load id value
+18:  ST  0,0(6) 	store left opto
+* -> Id
+19:  LD  0,3(5) 	load id value
+20:  LD  1,0(6) 	op: load left opto
+21:  ADD  0,1,0 	op +
+* <-Arithmatic
+22:  ST  0,0(6) 	store left optr
+* -> Id
+23:  LD  0,4(5) 	load id value
+24:  LD  1,0(6) 	load left optr
+25:  SUB  0,1,0 	opr -
+26:  JGT  0,2(7) 	br if true
+27:  LDC  0,0(0) 	false case
+28:  LDA  7,1(7) 	unconditional jmp
+29:  LDC  0,1(0) 	load constant true
+* <-EqualExp
+* if: jump to else belongs here
+* -> assign
+* -> Const INT
+31:  LDC  0,1(0) 	load const int
+* <- Const INT
+32:  ST  0,5(5) 	assign: store value to symbol
+* <- assign
+* if: jump to end belongs here
+30:  JEQ  0,3(7) 	if: jmp to else
+* -> assign
+* -> Const INT
+34:  LDC  0,0(0) 	load const int
+* <- Const INT
+35:  ST  0,5(5) 	assign: store value to symbol
+* <- assign
+33:  LDA  7,2(7) 	jmp to end
+* <- If
+* -> Id
+36:  LD  0,5(5) 	load id value
+37:  ST  5,0(6) 	store the gp to tmp
+38:  LD  5,0(5) 	back the gp
+39:  LDA  7,0(6) 	jmp return
+* <-Function Definition: function1
+
+* ->Function Definition: main
+2:  LDA  7,37(7) 	jmp to main
+40:  LDC  0,0(0) 	Load constant 0
+41:  ST  0,0(5) 	store to stack
+* -> assign struct member
+* -> Const INT
+44:  LDC  0,9(0) 	load const int
+* <- Const INT
+45:  ST  0,2(5) 	assign: store value to struct element
+* <- assign struct member
+* -> assign struct member
+* -> Const INT
+46:  LDC  0,0(0) 	load const int
+* <- Const INT
+47:  ST  0,6(5) 	assign: store value to struct element
+* <- assign struct member
+* -> Const INT
+48:  LDC  0,0(0) 	load const int
+* <- Const INT
+49:  ST  0,10(5) 	declare assign
+* -> While
+* ->EqualExp
+* -> Id
+50:  LD  0,10(5) 	load id value
+51:  ST  0,0(6) 	store left optr
+* -> Const INT
+52:  LDC  0,10(0) 	load const int
+* <- Const INT
+53:  LD  1,0(6) 	load left optr
+54:  SUB  0,1,0 	opr -
+55:  JLT  0,2(7) 	br if true
+56:  LDC  0,0(0) 	false case
+57:  LDA  7,1(7) 	unconditional jmp
+58:  LDC  0,1(0) 	load constant true
+* <-EqualExp
+* while: jump to end belongs here
+* -> assign struct member
+* ->Arithmatic
+60:  LD  0,6(5) 	load struct member value
+61:  ST  0,0(6) 	store left opto
+* -> Const INT
+62:  LDC  0,1(0) 	load const int
+* <- Const INT
+63:  LD  1,0(6) 	op: load left opto
+64:  ADD  0,1,0 	op +
+* <-Arithmatic
+65:  ST  0,6(5) 	assign: store value to struct element
+* <- assign struct member
+66:  LD  0,6(5) 	load struct member value
+67:  OUT  0,0,0 	write ac
+68:  LDA  7,-19(7) 	jmp to start
+59:  JEQ  0,9(7) 	while: jmp to end
+* <- While
+69:  IN  0,0,0 	read value
+70:  ST  0,11(5) 	read: store value
+* -> If
+* ->OrExp
+* ->EqualExp
+* ->Arithmatic
+* -> Const INT
+71:  LDC  0,6(0) 	load const int
+* <- Const INT
+72:  ST  0,0(6) 	store left opto
+* -> Const INT
+73:  LDC  0,8(0) 	load const int
+* <- Const INT
+74:  LD  1,0(6) 	op: load left opto
+75:  ADD  0,1,0 	op +
+* <-Arithmatic
+76:  ST  0,0(6) 	store left optr
+* -> Const INT
+77:  LDC  0,14(0) 	load const int
+* <- Const INT
+78:  LD  1,0(6) 	load left optr
+79:  SUB  0,1,0 	opr -
+80:  JEQ  0,2(7) 	br if true
+81:  LDC  0,0(0) 	false case
+82:  LDA  7,1(7) 	unconditional jmp
+83:  LDC  0,1(0) 	load constant true
+* <-EqualExp
+* ->AndExp
+* ->EqualExp
+* ->Term
+* -> Const INT
+85:  LDC  0,5(0) 	load const int
+* <- Const INT
+86:  ST  0,0(6) 	store left opto
+* -> Const INT
+87:  LDC  0,7(0) 	load const int
+* <- Const INT
+88:  LD  1,0(6) 	op: load left opto
+89:  MUL  0,1,0 	op *
+* <-Term
+90:  ST  0,0(6) 	store left optr
+* -> Const INT
+91:  LDC  0,34(0) 	load const int
+* <- Const INT
+92:  LD  1,0(6) 	load left optr
+93:  SUB  0,1,0 	opr -
+94:  JGE  0,2(7) 	br if true
+95:  LDC  0,0(0) 	false case
+96:  LDA  7,1(7) 	unconditional jmp
+97:  LDC  0,1(0) 	load constant true
+* <-EqualExp
+* ->EqualExp
+* ->Arithmatic
+* -> Const INT
+99:  LDC  0,4(0) 	load const int
+* <- Const INT
+100:  ST  0,0(6) 	store left opto
+* -> Const INT
+101:  LDC  0,4(0) 	load const int
+* <- Const INT
+102:  LD  1,0(6) 	op: load left opto
+103:  SUB  0,1,0 	op -
+* <-Arithmatic
+104:  ST  0,0(6) 	store left optr
+* -> Const INT
+105:  LDC  0,0(0) 	load const int
+* <- Const INT
+106:  LD  1,0(6) 	load left optr
+107:  SUB  0,1,0 	opr -
+108:  JGE  0,2(7) 	br if true
+109:  LDC  0,0(0) 	false case
+110:  LDA  7,1(7) 	unconditional jmp
+111:  LDC  0,1(0) 	load constant true
+* <-EqualExp
+98:  JEQ  0,13(7) 	andExp is false
+112:  LDC  0,0(0) 	set ac false
+* <-AndExp
+84:  JNE  0,28(7) 	andExp is true
+113:  LDC  0,1(0) 	set ac false
+* <-OrExp
+* if: jump to else belongs here
+* -> assign
+* ->Arithmatic
+115:  LD  0,6(5) 	load struct member value
+116:  ST  0,0(6) 	store left opto
+* -> Const INT
+117:  LDC  0,10(0) 	load const int
+* <- Const INT
+118:  LD  1,0(6) 	op: load left opto
+119:  ADD  0,1,0 	op +
+* <-Arithmatic
+120:  ST  0,11(5) 	assign: store value to array element
+* <- assign
+* if: jump to end belongs here
+114:  JEQ  0,7(7) 	if: jmp to else
+121:  LDA  7,0(7) 	jmp to end
+* <- If
+122:  OUT  0,0,0 	write ac
+* -> Const INT
+123:  LDC  0,0(0) 	load const int
+* <- Const INT
+124:  ST  5,0(6) 	store the gp to tmp
+125:  LD  5,0(5) 	back the gp
+126:  LDA  7,0(6) 	jmp return
+* <-Function Definition: main
+
+42:  LDC  0,127(0) 	Load the return address
+43:  ST  0,1(5) 	store the return address
+127:  HALT  0,0,0 	end of the program

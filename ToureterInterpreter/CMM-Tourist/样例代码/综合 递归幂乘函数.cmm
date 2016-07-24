@@ -1,0 +1,33 @@
+/**
+ * Name:	×ÛºÏ: µÝ¹éÃÝ³Ëº¯Êý
+ * Author:	¼ÖµÀÔ¶
+ * Date:	2013/1/5
+ */
+
+class PowFunctionDemo{
+	int field1;
+	real field2;
+	
+	//the function to calculate the power result
+	int powmn(int m,int n) 
+	{ 
+		if(n<0) 
+			return 0;
+		if(m==0) 
+			return 0;
+		if(n==0) 
+			return 1;
+		return powmn(m,n-1)*m;
+	} 
+	
+	//eg intput 2 3
+	//output: 8
+	int main(){
+		int m = 0;
+		int n = 0;
+		read m;
+		read n;
+		write(powmn(m,n));
+		return 0;
+	}
+}

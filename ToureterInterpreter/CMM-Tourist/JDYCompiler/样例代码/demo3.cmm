@@ -1,0 +1,46 @@
+﻿struct A{
+	int mem1;
+	real mem2;
+	bool mem3;
+}
+struct B{
+	int mem1;
+	int mem2;
+	struct A mem3;
+}
+struct C{
+	struct A mem1;
+	struct B mem2;
+}
+class Test{
+	int memBer1;
+	real memBer2;
+	bool memBer3;
+	int function1(int a,int b,int c){
+		int tmp = 9+8*7%13;
+		if(a+b>c){
+			tmp = 1;
+		}else{
+			tmp = 0;
+		}
+		return tmp;
+	}
+	
+	int main(){
+		struct C structMem;
+		structMem.mem1.mem1 = 9;
+		structMem.mem2.mem2 = 0;
+		int i=0;
+		while(i<10){
+			structMem.mem2.mem2 = structMem.mem2.mem2 + 1;
+			write structMem.mem2.mem2;
+		}
+		int arr[10][2];
+		read arr[0][0];
+		if((6+8==14)||((5*7>=34)&&(4-4>=0))){
+			arr[0][0] = structMem.mem2.mem2 + 10;
+		}
+		write arr[0][0];
+		return 0;
+	}
+}

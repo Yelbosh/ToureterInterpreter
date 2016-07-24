@@ -1,0 +1,29 @@
+
+Symbol table:
+
+Name        Type        IsEmpty        Hash Table
+----        ----        -------        ----------
+main        2           False          type:INTEGER
+                                       typeName:int
+                                       startLoc:3
+                                       params:
+#####################################################
+
+index       1           False          type:INTEGER
+                                       typeName:int
+                                       dimen:0
+                                       size:1
+                                       loc:2
+                                       dimenList:
+                                       value:1
+#####################################################
+
+arr         1           False          type:INTEGER
+                                       typeName:int
+                                       dimen:1
+                                       size:4
+                                       loc:3
+                                       dimenList:4 
+
+#####################################################
+

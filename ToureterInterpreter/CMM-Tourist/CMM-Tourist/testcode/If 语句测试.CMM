@@ -1,0 +1,3 @@
+   int a =3;
+    if (a<2) { write(a);  }
+    else   write(a+1);  //Êä³ö4
